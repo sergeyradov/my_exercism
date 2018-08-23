@@ -2,7 +2,9 @@ import { reverseString } from './reverse-string';
 
 describe('ReverseString', () => {
   test('empty string', () => {
-    expect(reverseString('')).toEqual('');
+    const expected = '';
+    const actual = reverseString('');
+    expect(actual).toEqual(expected);
   });
 
   test('a word', () => {
