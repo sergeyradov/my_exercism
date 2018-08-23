@@ -51,31 +51,26 @@ export const decode = (str) => {
 
             var strAmount = "";
 
-            for (var i = index; i < str.length;i++) {
+            for (var i = index; i < str.length; i++) {
 
                 if (isNaN(parseInt(str.charAt(i)))) {
-                    index=index+1;
+                    
+                    index = index + 1;
 
-                    if(parseInt(strAmount)>0 ) {
-
+                    if (parseInt(strAmount) > 0) {
                         result = result + str.charAt(i).repeat(parseInt(strAmount));
-
                     }
-                    else{
-
-                        result = result +str.charAt(i);
-
+                    else {
+                        result = result + str.charAt(i);
                     }
-                     
-                    strAmount="";
+
+                    strAmount = "";
                     continue;
                 }
-                else{
-
+                else {
                     strAmount = strAmount + parseInt(str.charAt(i));
-
                 }
-                index=index+1;
+                index = index + 1;
             }
         }
     }
