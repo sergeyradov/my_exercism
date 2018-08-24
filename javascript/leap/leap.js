@@ -4,9 +4,14 @@ class Year {
 	this.year=year;	
   }
 
+  modulo(x){
+     return this.year % x == 0;
+  }
+
   isLeap() {
-     return (this.year % 4 == 0 && (this.year % 100 !==0 || this.year % 400 ==0 ) );    
-  } 
+     return (this.modulo(4)  && (!this.modulo(100) || this.modulo (400) ) );    
+  }
+
 }
 
 export default Year;
