@@ -1,8 +1,8 @@
 export const reverseString=str=>{
    
-   var result = '';
+   let result = '';
 
-   for(var i=str.length; i>0; i--){
+   for(let i=str.length; i>0; i--){
       
       result = result + str.charAt(i-1); 
       
