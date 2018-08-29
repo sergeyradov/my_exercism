@@ -1,31 +1,24 @@
 class Transcriptor {
+  
+  constructor(){
+    this.transcription = {'G':'C','C':'G','T':'A','A':'U'};
+  }
     
-    constructor(){
+  transform(element){
+    return this.transcription[element];
+  }
 
-       var matrix = [];
-       matrix['G'] = 'C';
-       matrix['C']='G';
-       matrix['T']='A';
-       matrix['A']='U';
-       this.matrix = matrix;
-    }
+  toRna(dnaStr){
 
-    toRna(dnaStr){
+    return dnaStr.split('').map(element => {
 
-        var rnaStr='';
-        
-        for(var i=0; i < dnaStr.length; i++){
-
-            if(dnaStr.charAt(i) !== null && this.matrix[dnaStr.charAt(i)]!==undefined){
-
-                rnaStr=rnaStr + this.matrix[dnaStr.charAt(i)];
-            }
-            else{
-                throw new Error('Invalid input DNA.');
-            }
-        }
-        return rnaStr;
-    }
+     if(this.transform(element)==null) 
+       throw new Error('Invalid input DNA.');
+     else
+       return this.transform(element);  
+    }).join('');
+    
+   }
 };
 
 export default Transcriptor;
